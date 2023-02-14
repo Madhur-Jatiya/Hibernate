@@ -1,9 +1,7 @@
 package com.hibernate;
 
-import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
-import jakarta.persistence.Table;
 
 //to change whole entity name
 //@Entity(name = "anotherName")
