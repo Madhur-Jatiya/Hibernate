@@ -1,13 +1,19 @@
 package com.hibernate;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
 //to change whole entity name
 //@Entity(name = "anotherName")
 //to change table name default name is class name
-//@Table(name = "tableName")
+//@Table(name = "Employee")
 
-@jakarta.persistence.Entity
+
+@Entity
 public class Student {
-	@jakarta.persistence.Id
+	@Id
 	private int id;
 	private String name;
 	private String city;
