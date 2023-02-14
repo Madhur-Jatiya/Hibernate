@@ -1,5 +1,8 @@
 package com.hibernate;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.Date;
 
 import org.hibernate.Session;
@@ -8,7 +11,7 @@ import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
 
 public class App {
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException {
 		Configuration cfg = new Configuration();
 		cfg.configure("config.xml");
 //		cfg.configure("config.xml").addAnnotatedClass(Student.class);
@@ -19,14 +22,19 @@ public class App {
 //		student.setName("Rani");
 //		student.setCity("Indore");
 //		System.out.println(student);
-		
+
 		Address address = new Address();
 		address.setStreet("Khandawa Naka");
 		address.setCity("Indore");
-		address.setOpen(true);
+		address.setOpen(false);
 		address.setX(0);
 		address.setAddedDate(new Date());
-		
+
+		// read image
+		FileInputStream fStream = new FileInputStream("src/main/java/mr_moms.png");
+		byte[] data = new byte[fStream.available()];
+		fStream.read(data);
+		address.setImage(data);
 
 		Session session = sessionFactory.openSession();
 		Transaction tx = session.beginTransaction();
