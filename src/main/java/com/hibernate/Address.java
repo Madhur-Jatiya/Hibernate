@@ -40,6 +40,7 @@ public class Address {
 	private Date addedDate;
 
 	@Lob
+	@Column(columnDefinition = "LongBlob")
 	private byte[] image;
 
 	public int getAddressId() {

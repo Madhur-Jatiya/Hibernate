@@ -8,13 +8,21 @@ import jakarta.persistence.Id;
 //to change table name default name is class name
 //@Table(name = "Employee")
 
-
 @Entity
 public class Student {
 	@Id
 	private int id;
 	private String name;
 	private String city;
+	private Certificate certificate;
+
+	public Certificate getCertificate() {
+		return certificate;
+	}
+
+	public void setCertificate(Certificate certificate) {
+		this.certificate = certificate;
+	}
 
 	@Override
 	public String toString() {
@@ -43,5 +51,17 @@ public class Student {
 
 	public void setCity(String city) {
 		this.city = city;
+	}
+
+	public Student(int id, String name, String city, Certificate certificate) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.city = city;
+		this.certificate = certificate;
+	}
+
+	public Student() {
+		super();
 	}
 }
