@@ -42,32 +42,32 @@ public class App {
 		// set Student and Certificate
 		
 		Certificate certificate = new Certificate();
-		certificate.setCourse("java");
-		certificate.setDuration("4 months");
+		certificate.setCourse("python");
+		certificate.setDuration("6 months");
 		
 		Student student = new Student();
-		student.setId(3);
-		student.setName("Lokesh");
-		student.setCity("Dhar");
+		student.setId(5);
+		student.setName("Akshu");
+		student.setCity("Maharastra");
 		student.setCertificate(certificate);
 		System.out.println(student);
 
 		
-		Certificate certificate2 = new Certificate();
-		certificate2.setCourse("python+");
-		certificate2.setDuration("4 months");
-		
-		Student student2 = new Student();
-		student2.setId(4);
-		student2.setName("Anurag");
-		student2.setCity("Sagar");
-		student2.setCertificate(certificate2);
-		System.out.println(student2);
+//		Certificate certificate2 = new Certificate();
+//		certificate2.setCourse("python+");
+//		certificate2.setDuration("4 months");
+//		
+//		Student student2 = new Student();
+//		student2.setId(4);
+//		student2.setName("Anurag");
+//		student2.setCity("Sagar");
+//		student2.setCertificate(certificate2);
+//		System.out.println(student2);
 
 		Session session = sessionFactory.openSession();
 		Transaction tx = session.beginTransaction();
 		session.save(student);
-		session.save(student2);
+//		session.save(student2);
 		tx.commit();
 		session.close();
 	}
