@@ -10,9 +10,10 @@
 		<property name="dialect">org.hibernate.dialect.MySQLDialect</property>
 		<property name="hbm2ddl.auto">update</property>
 		<property name="show_sql">true</property>
-		<mapping class="com.hibernate.Student" />
-		<mapping class="com.hibernate.Address" />
-		<!-- <mapping class="com.hibernate.Certificate" /> -->
+		<mapping class="com.hibernate.basic.Student" />
+		<mapping class="com.hibernate.basic.Address" />
+		<mapping class="com.hibernate.map.Question" />
+		<mapping class="com.hibernate.map.Answer" />
 	</session-factory>
 </hibernate-configuration>
 

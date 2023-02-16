@@ -1,4 +1,4 @@
-package com.hibernate;
+package com.hibernate.basic;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;

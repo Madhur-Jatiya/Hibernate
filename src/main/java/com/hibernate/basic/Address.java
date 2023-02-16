@@ -1,4 +1,4 @@
-package com.hibernate;
+package com.hibernate.basic;
 
 import java.util.Date;
 import java.util.Arrays;
