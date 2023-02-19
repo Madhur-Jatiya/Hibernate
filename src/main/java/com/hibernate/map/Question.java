@@ -1,9 +1,10 @@
 package com.hibernate.map;
 
+import java.util.List;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
-import jakarta.persistence.OneToOne;
+import jakarta.persistence.OneToMany;
 
 @Entity
 public class Question {
@@ -11,12 +12,36 @@ public class Question {
 	@Id
 	@Column(name = "Question_id")
 	private int id;
-	
-	@Column(name = "Question")
+
+//	@Column(name = "Question")
 	private String question;
-	
-	@OneToOne
-	private Answer answer;
+
+//	@OneToOne
+//	private Answer answer;
+
+
+	@OneToMany(mappedBy = "question")
+	private List<Answer> answers;
+
+	@Override
+	public String toString() {
+		return "Question [id=" + id + ", question=" + question + ", answers=" + answers + "]";
+	}
+
+	public Question(int id, String question, List<Answer> answers) {
+		super();
+		this.id = id;
+		this.question = question;
+		this.answers = answers;
+	}
+
+	public List<Answer> getAnswers() {
+		return answers;
+	}
+
+	public void setAnswers(List<Answer> answers) {
+		this.answers = answers;
+	}
 
 	public int getId() {
 		return id;
@@ -34,27 +59,27 @@ public class Question {
 		this.question = question;
 	}
 
-	public Answer getAnswer() {
-		return answer;
-	}
-
-	public void setAnswer(Answer answer) {
-		this.answer = answer;
-	}
-
-	public Question(int id, String question, Answer answer) {
-		super();
-		this.id = id;
-		this.question = question;
-		this.answer = answer;
-	}
-
 	public Question() {
 		super();
 	}
 
-	@Override
-	public String toString() {
-		return "Question [id=" + id + ", question=" + question + ", answer=" + answer + "]";
-	}
+//	public Answer getAnswer() {
+//		return answer;
+//	}
+//
+//	public void setAnswer(Answer answer) {
+//		this.answer = answer;
+//	}
+//
+//	public Question(int id, String question, Answer answer) {
+//		super();
+//		this.id = id;
+//		this.question = question;
+//		this.answer = answer;
+//	}
+//	
+//	@Override
+//	public String toString() {
+//		return "Question [id=" + id + ", question=" + question + ", answer=" + answer + "]";
+//	}
 }
