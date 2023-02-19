@@ -34,39 +34,41 @@ public class Test {
 //		question2.setAnswer(answer2);
 
 		// many to one relation
-		Question question1 = new Question();
-		question1.setId(111);
-		question1.setQuestion("What is JAVA?");
-
-		Answer answer1 = new Answer();
-		answer1.setId(11);
-		answer1.setAnswer("Java is a programming language");
-		answer1.setQuestion(question1);
-
-		Answer answer2 = new Answer();
-		answer2.setId(12);
-		answer2.setAnswer("Java is a Object Oriented language");
-		answer2.setQuestion(question1);
-
-		List<Answer> list = new ArrayList<Answer>();
-		list.add(answer1);
-		list.add(answer2);
-		question1.setAnswers(list);
-		;
+//		Question question1 = new Question();
+//		question1.setId(111);
+//		question1.setQuestion("What is JAVA?");
+//
+//		Answer answer1 = new Answer();
+//		answer1.setId(11);
+//		answer1.setAnswer("Java is a programming language");
+//		answer1.setQuestion(question1);
+//
+//		Answer answer2 = new Answer();
+//		answer2.setId(12);
+//		answer2.setAnswer("Java is a Object Oriented language");
+//		answer2.setQuestion(question1);
+//
+//		List<Answer> list = new ArrayList<Answer>();
+//		list.add(answer1);
+//		list.add(answer2);
+//		question1.setAnswers(list);
 
 		Session session = sessionFactory.openSession();
 		Transaction transaction = session.beginTransaction();
 
 		// save
-		session.save(question1);
-		session.save(answer1);
-		session.save(answer2);
-		transaction.commit();
+//		session.save(question1);
+//		session.save(answer1);
+//		session.save(answer2);
+//		transaction.commit();
 
 		//fetch
+		Question question = session.get(Question.class, 111);
+		System.out.println(question.getQuestion());
 		
-//		Question question = session.get(Question.class, 11);
-//		System.out.println(question);
+		for (Answer answer : question.getAnswers()) {
+			System.out.println(answer.getAnswer());
+		}
 
 		session.close();
 		sessionFactory.close();
