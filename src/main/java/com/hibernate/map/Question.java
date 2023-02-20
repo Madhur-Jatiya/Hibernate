@@ -3,6 +3,7 @@ package com.hibernate.map;
 import java.util.List;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 
@@ -20,7 +21,8 @@ public class Question {
 //	private Answer answer;
 
 
-	@OneToMany(mappedBy = "question")
+//	@OneToMany(mappedBy = "question")
+	@OneToMany(mappedBy = "question",fetch = FetchType.LAZY)
 	private List<Answer> answers;
 
 	@Override

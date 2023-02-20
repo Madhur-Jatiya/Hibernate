@@ -14,7 +14,7 @@ public class Test {
 		SessionFactory sessionFactory = configuration.buildSessionFactory();
 
 		// one to one relation
-
+//
 //		Answer answer1 = new Answer();
 //		answer1.setId(1);
 //		answer1.setAnswer("My name is Madhur");
@@ -33,7 +33,7 @@ public class Test {
 //		question2.setQuestion("What is best Friend?");
 //		question2.setAnswer(answer2);
 
-		// many to one relation
+//		 many to one relation
 //		Question question1 = new Question();
 //		question1.setId(111);
 //		question1.setQuestion("What is JAVA?");
@@ -52,11 +52,11 @@ public class Test {
 //		list.add(answer1);
 //		list.add(answer2);
 //		question1.setAnswers(list);
-
+//
 		Session session = sessionFactory.openSession();
 		Transaction transaction = session.beginTransaction();
-
-		// save
+//
+////		 save
 //		session.save(question1);
 //		session.save(answer1);
 //		session.save(answer2);
