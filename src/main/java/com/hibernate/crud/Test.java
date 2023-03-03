@@ -22,6 +22,9 @@ public class Test {
 		Session session = sessionFactory.openSession();
 		Transaction transaction = session.beginTransaction();
 
+		//save
+		session.save(human1);
+		
 		//update
 //		session.saveOrUpdate(human1);
 		
