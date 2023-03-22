@@ -18,6 +18,8 @@
 		<mapping class="com.hibernate.map.manyToMany.Project" />
 		<mapping class="com.hibernate.hibernateSession.Human" />
 		<mapping class="com.hibernate.crud.Human1" />
+		<mapping class="com.hibernate.map.oneToOne.Skills"/>
+		<mapping class="com.hibernate.map.oneToOne.Intern"/>
 	</session-factory>
 </hibernate-configuration>
 

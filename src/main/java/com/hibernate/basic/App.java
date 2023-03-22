@@ -13,8 +13,7 @@ import org.hibernate.engine.jdbc.BlobProxy;
 
 public class App {
 	public static void main(String[] args) throws IOException {
-		Configuration cfg = new Configuration();
-		cfg.configure("config.xml");
+		Configuration cfg = new Configuration().configure("config.xml");
 //		cfg.configure("config.xml").addAnnotatedClass(Student.class);
 		SessionFactory sessionFactory = cfg.buildSessionFactory();
 
