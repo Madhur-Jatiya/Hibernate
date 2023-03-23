@@ -18,8 +18,10 @@
 		<mapping class="com.hibernate.map.manyToMany.Project" />
 		<mapping class="com.hibernate.hibernateSession.Human" />
 		<mapping class="com.hibernate.crud.Human1" />
-		<mapping class="com.hibernate.map.oneToOne.Skills"/>
-		<mapping class="com.hibernate.map.oneToOne.Intern"/>
+		<mapping class="com.hibernate.map.oneToOne.Skills" />
+		<mapping class="com.hibernate.map.oneToOne.Intern" />
+		<mapping class="com.hibernate.OneToMany.Country" />
+		<mapping class="com.hibernate.OneToMany.City" />
 	</session-factory>
 </hibernate-configuration>
 
