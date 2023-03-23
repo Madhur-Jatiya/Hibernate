@@ -1,4 +1,4 @@
-package com.hibernate.OneToMany;
+package com.hibernate.map.manyToMany.example1;
 
 import java.util.List;
 
@@ -8,22 +8,29 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToMany;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "Country")
-public class Country {
+@Table(name = "Students")
+public class Students {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
-	@Column(name = "Intern Name")
+	@Column(name = "Students Name")
 	private String name;
-	@OneToMany
-	@JoinColumn(name = "City_id")
-	private List<City> city;
+	@ManyToMany(mappedBy = "students")
+	private List<Subjects> subjects;
 
-	public Country() {
+	public Students(int id, String name, List<Subjects> subjects) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.subjects = subjects;
+	}
+
+	public Students() {
 		super();
 	}
 
@@ -43,24 +50,17 @@ public class Country {
 		this.name = name;
 	}
 
-	public List<City> getCity() {
-		return city;
+	public List<Subjects> getSubjects() {
+		return subjects;
 	}
 
-	public void setCity(List<City> city) {
-		this.city = city;
-	}
-
-	public Country(int id, String name, List<City> city) {
-		super();
-		this.id = id;
-		this.name = name;
-		this.city = city;
+	public void setSubjects(List<Subjects> subjects) {
+		this.subjects = subjects;
 	}
 
 	@Override
 	public String toString() {
-		return "Country [id=" + id + ", name=" + name + ", city=" + city + "]";
+		return "Students [id=" + id + ", name=" + name + ", subjects=" + subjects + "]";
 	}
 
 }

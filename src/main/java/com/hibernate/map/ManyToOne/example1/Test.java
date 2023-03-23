@@ -1,4 +1,4 @@
-package com.hibernate.map;
+package com.hibernate.map.ManyToOne.example1;
 
 import java.util.ArrayList;
 import java.util.List;

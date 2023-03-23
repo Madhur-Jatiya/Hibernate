@@ -1,4 +1,4 @@
-package com.hibernate.OneToMany;
+package com.hibernate.map.ManyToOne.example2;
 
 import java.io.IOException;
 import java.util.ArrayList;

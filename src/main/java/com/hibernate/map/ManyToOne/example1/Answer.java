@@ -1,4 +1,4 @@
-package com.hibernate.map;
+package com.hibernate.map.ManyToOne.example1;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;

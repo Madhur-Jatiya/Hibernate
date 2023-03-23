@@ -1,4 +1,4 @@
-package com.hibernate.map.manyToMany;
+package com.hibernate.map.manyToMany.example2;
 
 import java.util.List;
 
