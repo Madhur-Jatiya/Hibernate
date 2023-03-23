@@ -17,32 +17,32 @@ public class App {
 		Transaction tr = session.beginTransaction();
 
 		// insert
-		Country country = new Country();
-		country.setName("India");
-
-		City city = new City();
-		city.setName("Bhopal");
-		city.setPin(462001);
-
-		City city2 = new City();
-		city2.setName("Jaipur");
-		city2.setPin(302001);
-
-		List<City> cityList = new ArrayList<City>();
-		cityList.add(city);
-		cityList.add(city2);
-
-		country.setCity(cityList);
+//		Country country = new Country();
+//		country.setName("India");
+//
+//		City city = new City();
+//		city.setName("Bhopal");
+//		city.setPin(462001);
+//
+//		City city2 = new City();
+//		city2.setName("Jaipur");
+//		city2.setPin(302001);
+//
+//		List<City> cityList = new ArrayList<City>();
+//		cityList.add(city);
+//		cityList.add(city2);
+//
+//		country.setCity(cityList);
 
 		// Extract
-//		List<Country> getIntern = session.createQuery("from Intern").list();
-//		for (Country intern2 : getIntern) {
-//			System.out.println(intern2);
-//		}
+		List<Country> getCountries = session.createQuery("from Country").list();
+		for (Country intern2 : getCountries) {
+			System.out.println(intern2);
+		}
 
-		session.save(country);
-		session.save(city);
-		session.save(city2);
+//		session.save(country);
+//		session.save(city);
+//		session.save(city2);
 
 		tr.commit();
 
