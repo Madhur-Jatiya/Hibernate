@@ -10,18 +10,26 @@
 		<property name="dialect">org.hibernate.dialect.MySQLDialect</property>
 		<property name="hbm2ddl.auto">update</property>
 		<property name="show_sql">true</property>
+		<property name="hibernate.format_sql">true</property>
 		<mapping class="com.hibernate.basic.Student" />
 		<mapping class="com.hibernate.basic.Address" />
-		<mapping class="com.hibernate.map.Question" />
-		<mapping class="com.hibernate.map.Answer" />
-		<mapping class="com.hibernate.map.manyToMany.Employee" />
-		<mapping class="com.hibernate.map.manyToMany.Project" />
+		<mapping class="com.hibernate.map.ManyToOne.example1.Question" />
+		<mapping class="com.hibernate.map.ManyToOne.example1.Answer" />
+		<mapping class="com.hibernate.map.manyToMany.example2.Employee" />
+		<mapping class="com.hibernate.map.manyToMany.example2.Project" />
 		<mapping class="com.hibernate.hibernateSession.Human" />
 		<mapping class="com.hibernate.crud.Human1" />
 		<mapping class="com.hibernate.map.oneToOne.Skills" />
 		<mapping class="com.hibernate.map.oneToOne.Intern" />
-		<mapping class="com.hibernate.OneToMany.Country" />
-		<mapping class="com.hibernate.OneToMany.City" />
+		<mapping class="com.hibernate.map.ManyToOne.example2.Country" />
+		<mapping class="com.hibernate.map.ManyToOne.example2.City" />
+		<mapping class="com.hibernate.map.manyToMany.example1.Students" />
+		<mapping class="com.hibernate.map.manyToMany.example1.Subjects" />
+		<mapping class="com.hibernate.map.manyToMany.example1.App" />
+		<mapping class="com.hibernate.HQL.Operations" />
+		<mapping class="com.hibernate.HQL.StudentInfo" />
+		<mapping class="com.hibernate.HQL.AddressInfo" />
+		<mapping class="com.hibernate.HQL.SetEntities" />
 	</session-factory>
 </hibernate-configuration>
 
