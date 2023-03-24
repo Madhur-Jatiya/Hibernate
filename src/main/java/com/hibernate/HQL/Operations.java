@@ -1,5 +1,6 @@
 package com.hibernate.HQL;
 
+import java.util.Arrays;
 import java.util.List;
 
 import org.hibernate.Session;
@@ -80,9 +81,13 @@ public class Operations {
 //		q.executeUpdate();
 
 //=============================================================================================================
-		
-		//Joins
-		
+
+		// Joins
+		Query q = session.createQuery("Select s.name, a.city from StudentInfo as s Join s.addressInfo as a");
+		List<Object[]> list = q.list();
+		for (Object[] arr : list) {
+			System.out.println(Arrays.toString(arr));
+		}
 
 		// get All Students
 
